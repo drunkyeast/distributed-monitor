@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package dmonitor;
+
+option cc_generic_services=true; // 告诉protoc："请生成RPC服务的C++抽象基类".
+// protobuf核心是序列化反序列化, 提供rpc接口让rpc框架自行决定怎么实现, gRPC就没用这个而是用自己的插件.
+
+message MetricsData {
+    string server_name = 1;
+    int64 timestamp = 2;
+    float cpu_usage = 3;
+    float memory_usage = 4;
+}
+
+message ResultCode{
+    int32 errcode=1;
+    bytes errmsg=2;
+}
+
+// 上报给中心服务器
+message ReportRequest {
+    MetricsData metrics = 1;
+}
+
+
+message ReportResponse {
+    ResultCode result = 1;
+    bool success = 2;
+}
+
+// TUI查询
+message QueryRequest {
+    string server_name = 1; // 空表示查询所有!!!
+}
+
+message QueryResponse {
+    repeated MetricsData metrics = 1;
+    ResultCode result = 2;
+    bool success = 3;
+}
+
+service MonitorReportServiceRpc {
+    rpc Report(ReportRequest) returns(ReportResponse);
+}
+
+service MonitorQueryServiceRpc {
+    rpc Query(QueryRequest) returns(QueryResponse);
+}
+
+

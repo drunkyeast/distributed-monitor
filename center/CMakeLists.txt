@@ -1,0 +1,11 @@
+# 获取center的源文件, GLOB表示通配符!!! glob pattern(通配符模式), 而不是global全局变量的意思.
+file(GLOB CENTER_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/*.cc)
+
+# 获取protobuf生成的.cc文件
+file(GLOB PROTO_SRCS ${CMAKE_SOURCE_DIR}/common/*.pb.cc)
+
+# 创建可执行文件
+add_executable(center ${CENTER_SRCS} ${PROTO_SRCS})
+
+# 链接库（LIBS在主CMakeLists定义）
+target_link_libraries(center ${LIBS})

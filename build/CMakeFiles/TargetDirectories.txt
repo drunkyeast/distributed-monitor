@@ -1,0 +1,11 @@
+/root/work/distributed-monitor/build/CMakeFiles/edit_cache.dir
+/root/work/distributed-monitor/build/CMakeFiles/rebuild_cache.dir
+/root/work/distributed-monitor/build/center/CMakeFiles/center.dir
+/root/work/distributed-monitor/build/center/CMakeFiles/edit_cache.dir
+/root/work/distributed-monitor/build/center/CMakeFiles/rebuild_cache.dir
+/root/work/distributed-monitor/build/collector/CMakeFiles/collector.dir
+/root/work/distributed-monitor/build/collector/CMakeFiles/edit_cache.dir
+/root/work/distributed-monitor/build/collector/CMakeFiles/rebuild_cache.dir
+/root/work/distributed-monitor/build/tui/CMakeFiles/tui.dir
+/root/work/distributed-monitor/build/tui/CMakeFiles/edit_cache.dir
+/root/work/distributed-monitor/build/tui/CMakeFiles/rebuild_cache.dir
